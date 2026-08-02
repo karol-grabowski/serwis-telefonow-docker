@@ -21,7 +21,7 @@ Aplikacja webowa do obsługi serwisu telefonów, magazynu oraz punktu skupu i sp
 
 ---
 
-## 🚀 Instrukcja Uruchomienia (Krok po Kroku)
+## Instrukcja Uruchomienia (Krok po Kroku)
 
 ### Krok 1: Pobranie projektu
 
