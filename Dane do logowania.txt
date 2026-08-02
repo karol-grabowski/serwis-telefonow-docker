@@ -1,0 +1,6 @@
+Dane do logowania:
+Login: admin Hasło: admin123 Uprawnienia: przeglądanie, edycja, usuwanie, dodawanie, tworzenie nowych kont dla pracowników firmy
+Login: pracownik1 Hasło: pracownik12345 Uprawnienia: przeglądanie, edycja, usuwanie, dodawanie
+Login: pracownik2 Hasło: pracownik2345 Uprawnienia: przeglądanie, edycja, usuwanie, dodawanie
+Login: pracownik3 Hasło: pracownik345 Uprawnienia: przeglądanie, edycja, usuwanie, dodawanie
+ 
