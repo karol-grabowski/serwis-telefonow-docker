@@ -41,3 +41,9 @@ docker compose up -d
 Otwórz przeglądarkę i wejdź pod adres:
 
 👉 http://localhost:8080/strona.php
+
+---
+### Wygląd interfejsu
+<img width="1896" height="896" alt="design" src="https://github.com/user-attachments/assets/ef0b61ca-5bd9-44e3-b63e-668e8286bf0b" />
+
+
