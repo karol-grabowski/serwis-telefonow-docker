@@ -70,7 +70,7 @@ if (isset($_POST['login']))
 
 <body>
 
-		<span style="color: #33ABEB; font-size: 44px;background-color: #D5F0FE; padding: 20px 383px; display: inline-block;">Baza danych serwisu telefonów</span>
+		<span style="color: #33ABEB; font-size: 44px;background-color: #D5F0FE; padding: 20px 383px; display: inline-block;">Baza danych serwisu telefonóww</span>
 
 		<!--zaloguj -->
 		<form action="index.php" method="post">
