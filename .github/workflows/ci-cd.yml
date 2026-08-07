@@ -14,6 +14,19 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # --- NOWOŚĆ: OPACJA B (Sprawdzanie składni PHP) ---
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+
+      - name: Check PHP syntax (Lint)
+        run: |
+          for file in $(find . -maxdepth 1 -name "*.php"); do
+            php -l "$file" || exit 1
+          done
+      # --------------------------------------------------
+
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
@@ -23,7 +36,6 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      # 1. Budujemy obraz lokalnie w pamięci GitHub Actions (jeszcze go nie wysyłamy na Docker Huba!)
       - name: Build Docker image locally
         uses: docker/build-push-action@v5
         with:
@@ -31,18 +43,16 @@ jobs:
           load: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/serwis-telefonow:test-scan
 
-      # 2. Skanujemy zbudowany obraz narzędziem Trivy
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
           image-ref: '${{ secrets.DOCKERHUB_USERNAME }}/serwis-telefonow:test-scan'
           format: 'table'
-          exit-code: '0' # Ustaw '1' jeśli chcesz, by krytyczne luki blokowały build. Na razie '0', żeby sprawdzić raport.
+          exit-code: '0'
           ignore-unfixed: true
           vuln-type: 'os,library'
           severity: 'CRITICAL,HIGH'
 
-      # 3. Jeśli skanowanie przeszło pomyślnie, wypychamy właściwy obraz na Docker Hub
       - name: Build and push Docker image to Docker Hub
         uses: docker/build-push-action@v5
         with:
