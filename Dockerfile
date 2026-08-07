@@ -1,3 +1,4 @@
+TO_JEST_BLAD_NIE_MA_TAKIEJ_KOMENDY
 FROM php:8.1-apache
 
 RUN echo "output_buffering = On" > /usr/local/etc/php/conf.d/output-buffering.ini
