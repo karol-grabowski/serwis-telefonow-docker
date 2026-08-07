@@ -10,7 +10,7 @@ if (isset($_POST['login']))
 	{
 	require_once "connect.php";
 
-	$polaczenie = @new mysqli("db", "serwis_user", "serwis_password", "serwis_db"
+	$polaczenie = @new mysqli("db", "serwis_user", "serwis_password", "serwis_db");
 	
 	if ($polaczenie->connect_errno!=0)
 	{
