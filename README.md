@@ -1,4 +1,6 @@
-#  System Zarządzania Serwisem GSM
+#  System Zarządzania Serwisem Telefonów
+
+![CI Pipeline](https://github.com/karol-grabowski/serwis-telefonow-docker/actions/workflows/ci-cd.yml/badge.svg)
 
 Aplikacja webowa do obsługi serwisu telefonów, magazynu oraz punktu skupu i sprzedaży urządzeń.
 
@@ -19,7 +21,16 @@ Aplikacja webowa do obsługi serwisu telefonów, magazynu oraz punktu skupu i sp
 * **Baza danych:** MySQL 8.0
 * **Infrastruktura:** Docker & Docker Compose
 
----
+##  CI Pipeline & DevOps
+
+W projekcie skonfigurowano pipeline **Continuous Integration (CI)** oparty o **GitHub Actions** (`build-and-push`), który automatycznie weryfikuje kod oraz obraz przy każdym wdrożeniu:
+
+###  Przepływ pracy (Pipeline Workflow):
+1. **PHP Syntax Check (Lint):** Automatyczna weryfikacja poprawności składniowej kodu PHP przed budowaniem.
+2. **Multi-stage Docker Build:** Konfiguracja `Docker Buildx` do szybkiego i zoptymalizowanego budowania obrazu aplikacji.
+3. **Security Vulnerability Scanning (Trivy):** Automatyczne skanowanie obrazu kontenera pod kątem podatności i luk bezpieczeństwa przed jego publikacją.
+4. **Automated Docker Registry Push:** Bezpieczne wysyłanie przetestowanego i przeskanowanego obrazu do **Docker Hub**.
+
 
 ## Instrukcja Uruchomienia (Krok po Kroku)
 
